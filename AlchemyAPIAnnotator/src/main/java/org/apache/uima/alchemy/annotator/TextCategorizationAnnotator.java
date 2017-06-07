@@ -29,7 +29,7 @@ import org.apache.uima.jcas.JCas;
 public class TextCategorizationAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetCategory").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetCategory").toURL();
   }
 
   protected String[] getServiceParameters() {

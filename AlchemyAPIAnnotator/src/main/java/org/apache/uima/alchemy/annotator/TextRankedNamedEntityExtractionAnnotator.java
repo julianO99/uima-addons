@@ -29,7 +29,7 @@ import org.apache.uima.jcas.JCas;
 public class TextRankedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetRankedNamedEntities").toURL();
   }
 
   protected String[] getServiceParameters() {

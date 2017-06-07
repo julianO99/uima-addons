@@ -29,7 +29,7 @@ import org.apache.uima.jcas.JCas;
 public class TextLanguageDetectionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetLanguage").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetLanguage").toURL();
   }
 
   protected String[] getServiceParameters() {

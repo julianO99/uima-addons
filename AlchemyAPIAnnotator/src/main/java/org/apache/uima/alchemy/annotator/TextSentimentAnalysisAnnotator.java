@@ -29,7 +29,7 @@ import java.net.URL;
 public class TextSentimentAnalysisAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetTextSentiment").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment").toURL();
   }
 
   protected String[] getServiceParameters() {

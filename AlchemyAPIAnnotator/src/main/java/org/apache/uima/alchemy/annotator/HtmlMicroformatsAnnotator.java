@@ -32,7 +32,7 @@ import org.apache.uima.jcas.JCas;
 public class HtmlMicroformatsAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/html/HTMLGetMicroformatData").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/html/HTMLGetMicroformatData").toURL();
   }
 
   protected String[] getServiceParameters() {

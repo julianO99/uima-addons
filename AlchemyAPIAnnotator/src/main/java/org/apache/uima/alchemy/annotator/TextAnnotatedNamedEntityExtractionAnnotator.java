@@ -35,7 +35,7 @@ import org.apache.uima.jcas.JCas;
 public class TextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetAnnotatedNamedEntityText")
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetAnnotatedNamedEntityText")
             .toURL();
   }
 

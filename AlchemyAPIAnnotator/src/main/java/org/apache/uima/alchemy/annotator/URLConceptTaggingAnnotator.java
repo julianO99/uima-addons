@@ -37,7 +37,7 @@ public class URLConceptTaggingAnnotator extends AbstractAlchemyAnnotator {
 
   @Override
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/url/URLGetRankedConcepts").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/url/URLGetRankedConcepts").toURL();
   }
 
   @Override

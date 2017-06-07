@@ -29,7 +29,7 @@ import org.apache.uima.jcas.JCas;
 public class TextKeywordExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetKeywords").toURL();
+    return URI.create("http://gateway-a.watsonplatform.net/calls/text/TextGetKeywords").toURL();
   }
 
   protected String[] getServiceParameters() {
