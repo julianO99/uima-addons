@@ -75,6 +75,7 @@
     <module>Solrcas</module>
     <module>Tagger</module>
     <module>TikaAnnotator</module>
+    <module>WatsonNLUAnnotator</module>
     <module>WhitespaceTokenizer</module>
   </modules>
 
