@@ -10,7 +10,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Named entity
- * Updated by JCasGen Wed Jun 07 14:53:17 MSK 2017
+ * Updated by JCasGen Sun Jun 11 14:23:25 MSK 2017
  * @generated */
 public class Entity_Type extends WatsonAnnotation_Type {
   /** @generated */
@@ -53,19 +53,19 @@ public class Entity_Type extends WatsonAnnotation_Type {
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getRelevance(int addr) {
+  public double getRelevance(int addr) {
         if (featOkTst && casFeat_Relevance == null)
       jcas.throwFeatMissing("Relevance", "org.apache.uima.watson.ts.Entity");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_Relevance);
+    return ll_cas.ll_getDoubleValue(addr, casFeatCode_Relevance);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setRelevance(int addr, float v) {
+  public void setRelevance(int addr, double v) {
         if (featOkTst && casFeat_Relevance == null)
       jcas.throwFeatMissing("Relevance", "org.apache.uima.watson.ts.Entity");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_Relevance, v);}
+    ll_cas.ll_setDoubleValue(addr, casFeatCode_Relevance, v);}
     
   
  
@@ -109,7 +109,7 @@ public class Entity_Type extends WatsonAnnotation_Type {
     casFeatCode_EntityType  = (null == casFeat_EntityType) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_EntityType).getCode();
 
  
-    casFeat_Relevance = jcas.getRequiredFeatureDE(casType, "Relevance", "uima.cas.Float", featOkTst);
+    casFeat_Relevance = jcas.getRequiredFeatureDE(casType, "Relevance", "uima.cas.Double", featOkTst);
     casFeatCode_Relevance  = (null == casFeat_Relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Relevance).getCode();
 
  

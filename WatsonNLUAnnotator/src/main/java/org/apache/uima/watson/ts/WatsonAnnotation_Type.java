@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Base class for all other Watson annotations
- * Updated by JCasGen Wed Jun 07 14:53:17 MSK 2017
+ * Updated by JCasGen Sun Jun 11 14:23:25 MSK 2017
  * @generated */
 public class WatsonAnnotation_Type extends Annotation_Type {
   /** @generated */

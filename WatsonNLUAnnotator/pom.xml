@@ -94,6 +94,31 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.uima</groupId>
+        <artifactId>uimafit-maven-plugin</artifactId>
+        <version>2.3.0</version>
+        <configuration>
+          <parameterNameConstantPrefixes>
+            <prefix>PARAM_</prefix>
+          </parameterNameConstantPrefixes>
+
+          <outputDirectory>
+            ${project.basedir}/src/main/resources
+          </outputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>enhance</goal>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 

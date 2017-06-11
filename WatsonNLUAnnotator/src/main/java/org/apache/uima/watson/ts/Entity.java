@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Named entity
- * Updated by JCasGen Wed Jun 07 14:53:17 MSK 2017
+ * Updated by JCasGen Sun Jun 11 14:23:25 MSK 2017
  * XML source: /home/windj/projects/uima-addons/WatsonNLUAnnotator/src/main/resources/desc/type/Watson.xml
  * @generated */
 public class Entity extends WatsonAnnotation {
@@ -104,19 +104,19 @@ public class Entity extends WatsonAnnotation {
    * @generated
    * @return value of the feature 
    */
-  public float getRelevance() {
+  public double getRelevance() {
     if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Relevance == null)
       jcasType.jcas.throwFeatMissing("Relevance", "org.apache.uima.watson.ts.Entity");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Entity_Type)jcasType).casFeatCode_Relevance);}
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Entity_Type)jcasType).casFeatCode_Relevance);}
     
   /** setter for Relevance - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setRelevance(float v) {
+  public void setRelevance(double v) {
     if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Relevance == null)
       jcasType.jcas.throwFeatMissing("Relevance", "org.apache.uima.watson.ts.Entity");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Entity_Type)jcasType).casFeatCode_Relevance, v);}    
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((Entity_Type)jcasType).casFeatCode_Relevance, v);}    
    
     
   //*--------------*

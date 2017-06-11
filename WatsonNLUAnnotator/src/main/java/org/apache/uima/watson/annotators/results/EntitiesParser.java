@@ -13,7 +13,12 @@ public class EntitiesParser extends AbstractResultParser {
 			throw new NoResultException();
 		for (EntitiesResult res : results.getEntities()) {
 			Entity entity = new Entity(cas);
-			res.get
+			entity.setText(res.getText());
+			entity.setEntityType(res.getType());
+			entity.setRelevance(res.getRelevance());
+			entity.setCount(res.getCount());
+			alignAnnotationToText(entity, cas);
+			entity.addToIndexes();
 		}
 	}
 }

@@ -30,7 +30,7 @@
         <featureDescription>
           <name>Relevance</name>
           <description/>
-          <rangeTypeName>uima.cas.Float</rangeTypeName>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
         </featureDescription>
         <featureDescription>
           <name>Count</name>

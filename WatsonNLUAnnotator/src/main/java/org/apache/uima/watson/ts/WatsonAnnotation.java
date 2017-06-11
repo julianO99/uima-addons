@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Base class for all other Watson annotations
- * Updated by JCasGen Wed Jun 07 14:53:17 MSK 2017
+ * Updated by JCasGen Sun Jun 11 14:23:25 MSK 2017
  * XML source: /home/windj/projects/uima-addons/WatsonNLUAnnotator/src/main/resources/desc/type/Watson.xml
  * @generated */
 public class WatsonAnnotation extends Annotation {

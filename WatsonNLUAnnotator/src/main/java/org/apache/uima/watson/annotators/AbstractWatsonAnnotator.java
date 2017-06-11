@@ -22,7 +22,7 @@ public abstract class AbstractWatsonAnnotator extends JCasAnnotator_ImplBase {
 	@ConfigurationParameter(name = PARAM_USERNAME)
 	protected String username = null;
 
-	@ConfigurationParameter(name = PARAM_USERNAME)
+	@ConfigurationParameter(name = PARAM_PASSWORD)
 	protected String password = null;
 
 	protected NaturalLanguageUnderstanding service = null;
