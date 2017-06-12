@@ -27,7 +27,7 @@ public abstract class AbstractWatsonAnnotator extends JCasAnnotator_ImplBase {
 
 	protected NaturalLanguageUnderstanding service = null;
 	private Features features = null;
-	private List<AbstractResultParser> resultParsers; 
+	private List<AbstractResultParser> resultParsers;
 
 	@Override
 	public void initialize(UimaContext ctx) throws ResourceInitializationException {
@@ -41,20 +41,28 @@ public abstract class AbstractWatsonAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas cas) throws AnalysisEngineProcessException {
-		AnalyzeOptions parameters = new AnalyzeOptions.Builder()
-				.html(cas.getDocumentText())
-				.features(features).build();
-		AnalysisResults results = service.analyze(parameters).execute();
+		AnalyzeOptions parameters = new AnalyzeOptions.Builder().html(cas.getDocumentText()).features(features).build();
 
 		try {
-		for (AbstractResultParser parser : resultParsers) {
-			parser.parseResults(results, cas);
-		}
-		} catch (WatsonException ex) {
-			throw new AnalysisEngineProcessException(ex);
+			AnalysisResults results = service.analyze(parameters).execute();
+
+			try {
+				for (AbstractResultParser parser : resultParsers) {
+					parser.parseResults(results, cas);
+				}
+			} catch (WatsonException ex) {
+				throw new AnalysisEngineProcessException(ex);
+			}
+		} catch (Exception ex) {
+			handleException(cas, ex);
 		}
 	}
 
 	protected abstract Features initFeatures();
+
 	protected abstract List<AbstractResultParser> initResultParsers();
+
+	protected void handleException(JCas cas, Exception ex) throws AnalysisEngineProcessException {
+		throw new AnalysisEngineProcessException(ex);
+	}
 }

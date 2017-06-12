@@ -8,19 +8,18 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** Base class for all other Watson annotations
+/** 
  * Updated by JCasGen Mon Jun 12 14:43:19 MSK 2017
  * @generated */
-public class WatsonAnnotation_Type extends Annotation_Type {
+public class SimpleEntity_Type extends WatsonAnnotation_Type {
   /** @generated */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = WatsonAnnotation.typeIndexID;
+  public final static int typeIndexID = SimpleEntity.typeIndexID;
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.watson.ts.WatsonAnnotation");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.watson.ts.SimpleEntity");
  
   /** @generated */
   final Feature casFeat_Text;
@@ -32,7 +31,7 @@ public class WatsonAnnotation_Type extends Annotation_Type {
    */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_Text == null)
-      jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.WatsonAnnotation");
+      jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.SimpleEntity");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Text);
   }
   /** @generated
@@ -41,8 +40,32 @@ public class WatsonAnnotation_Type extends Annotation_Type {
    */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_Text == null)
-      jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.WatsonAnnotation");
+      jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.SimpleEntity");
     ll_cas.ll_setStringValue(addr, casFeatCode_Text, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_EntityType;
+  /** @generated */
+  final int     casFeatCode_EntityType;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getEntityType(int addr) {
+        if (featOkTst && casFeat_EntityType == null)
+      jcas.throwFeatMissing("EntityType", "org.apache.uima.watson.ts.SimpleEntity");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_EntityType);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setEntityType(int addr, String v) {
+        if (featOkTst && casFeat_EntityType == null)
+      jcas.throwFeatMissing("EntityType", "org.apache.uima.watson.ts.SimpleEntity");
+    ll_cas.ll_setStringValue(addr, casFeatCode_EntityType, v);}
     
   
 
@@ -53,13 +76,17 @@ public class WatsonAnnotation_Type extends Annotation_Type {
 	 * @param jcas JCas
 	 * @param casType Type 
 	 */
-  public WatsonAnnotation_Type(JCas jcas, Type casType) {
+  public SimpleEntity_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
     casFeat_Text = jcas.getRequiredFeatureDE(casType, "Text", "uima.cas.String", featOkTst);
     casFeatCode_Text  = (null == casFeat_Text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Text).getCode();
+
+ 
+    casFeat_EntityType = jcas.getRequiredFeatureDE(casType, "EntityType", "uima.cas.String", featOkTst);
+    casFeatCode_EntityType  = (null == casFeat_EntityType) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_EntityType).getCode();
 
   }
 }

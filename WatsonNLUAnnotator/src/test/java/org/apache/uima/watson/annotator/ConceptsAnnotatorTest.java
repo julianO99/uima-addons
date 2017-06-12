@@ -25,23 +25,23 @@ import java.util.Map;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.FileUtils;
-import org.apache.uima.watson.ts.Entity;
+import org.apache.uima.watson.ts.Concept;
 import org.apache.uima.watson.utils.TestUtils;
 import org.junit.Ignore;
 
 import junit.framework.TestCase;
 
-public class WatsonEntitiesExtractionAnnotatorTest extends TestCase {
+public class ConceptsAnnotatorTest extends TestCase {
 	// private static final String DOC = "Eight US soldiers die in attacks in
 	// south Afghanistan, making October the deadliest month for the US in the
 	// war there";
 
 	private static final String DOCPATH = "src/test/resources/rankedTestText.txt";
 
-	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonEntitiesAnnotator.xml";
+	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonConceptsAnnotator.xml";
 
-	private static final String YOUR_USERNAME_HERE = "your-username";
-	private static final String YOUR_PASSWORD_HERE = "your-passord";
+	private static final String YOUR_USERNAME_HERE = "username";
+	private static final String YOUR_PASSWORD_HERE = "password";
 
 	@SuppressWarnings("unchecked")
 	@Ignore
@@ -51,11 +51,11 @@ public class WatsonEntitiesExtractionAnnotatorTest extends TestCase {
 		parameterSettings.put("password", YOUR_PASSWORD_HERE);
 		String documentText = FileUtils.file2String(new File(DOCPATH));
 		JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(XML_PATH, parameterSettings), documentText);
-		List<Entity> entities = (List<Entity>) TestUtils.getAllFSofType(Entity.type, resultingCAS);
-		for (Entity ent : entities) {
-			System.out.println(ent.toString());
+		List<Concept> concepts = (List<Concept>) TestUtils.getAllFSofType(Concept.type, resultingCAS);
+		for (Concept conc : concepts) {
+			System.out.println(conc.toString());
 		}
-		assertTrue(entities != null);
-		assertTrue(entities.size() == 1);
+		assertTrue(concepts != null);
+		assertTrue(concepts.size() == 8);
 	}
 }

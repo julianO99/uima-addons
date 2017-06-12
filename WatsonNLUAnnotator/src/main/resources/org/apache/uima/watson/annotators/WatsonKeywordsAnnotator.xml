@@ -2,9 +2,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
     <primitive>true</primitive>
-    <annotatorImplementationName>org.apache.uima.watson.annotators.WatsonEntitiesAnnotator</annotatorImplementationName>
+    <annotatorImplementationName>org.apache.uima.watson.annotators.WatsonKeywordsAnnotator</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>org.apache.uima.watson.annotators.WatsonEntitiesAnnotator</name>
+        <name>org.apache.uima.watson.annotators.WatsonKeywordsAnnotator</name>
         <version>2.3.2-SNAPSHOT</version>
         <vendor>The Apache Software Foundation</vendor>
         <configurationParameters>
@@ -12,13 +12,6 @@
                 <name>limit</name>
                 <description/>
                 <type>Integer</type>
-                <multiValued>false</multiValued>
-                <mandatory>false</mandatory>
-            </configurationParameter>
-            <configurationParameter>
-                <name>model</name>
-                <description/>
-                <type>String</type>
                 <multiValued>false</multiValued>
                 <mandatory>false</mandatory>
             </configurationParameter>
@@ -76,7 +69,7 @@
             <capability>
                 <inputs/>
                 <outputs>
-                    <type>org.apache.uima.watson.ts.Entity</type>
+                    <type>org.apache.uima.watson.ts.Keyword</type>
                 </outputs>
                 <languagesSupported/>
             </capability>

@@ -1,1 +1,9 @@
 classpath*:org/apache/uima/watson/annotators/WatsonEntitiesAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonMetadataAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonSentimentAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonSemanticRolesAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonCategoriesAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonAllInOneAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonKeywordsAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonConceptsAnnotator.xml
+classpath*:org/apache/uima/watson/annotators/WatsonRelationsAnnotator.xml

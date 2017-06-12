@@ -95,6 +95,8 @@
         </executions>
       </plugin>
 
+      <!-- This plugin is disabled, because it removes typesystem import declaration -->
+      <!-- 
       <plugin>
         <groupId>org.apache.uima</groupId>
         <artifactId>uimafit-maven-plugin</artifactId>
@@ -119,6 +121,8 @@
           </execution>
         </executions>
       </plugin>
+       -->
+
     </plugins>
   </build>
 

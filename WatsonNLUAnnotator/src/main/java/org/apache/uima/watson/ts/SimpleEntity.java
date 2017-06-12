@@ -7,19 +7,18 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** Base class for all other Watson annotations
+/** 
  * Updated by JCasGen Mon Jun 12 14:43:19 MSK 2017
  * XML source: /home/windj/projects/uima-addons/WatsonNLUAnnotator/src/main/resources/desc/type/Watson.xml
  * @generated */
-public class WatsonAnnotation extends Annotation {
+public class SimpleEntity extends WatsonAnnotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(WatsonAnnotation.class);
+  public final static int typeIndexID = JCasRegistry.register(SimpleEntity.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +32,14 @@ public class WatsonAnnotation extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected WatsonAnnotation() {/* intentionally empty block */}
+  protected SimpleEntity() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public WatsonAnnotation(int addr, TOP_Type type) {
+  public SimpleEntity(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +47,7 @@ public class WatsonAnnotation extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public WatsonAnnotation(JCas jcas) {
+  public SimpleEntity(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +57,7 @@ public class WatsonAnnotation extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public WatsonAnnotation(JCas jcas, int begin, int end) {
+  public SimpleEntity(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -84,18 +83,40 @@ public class WatsonAnnotation extends Annotation {
    * @return value of the feature 
    */
   public String getText() {
-    if (WatsonAnnotation_Type.featOkTst && ((WatsonAnnotation_Type)jcasType).casFeat_Text == null)
-      jcasType.jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.WatsonAnnotation");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((WatsonAnnotation_Type)jcasType).casFeatCode_Text);}
+    if (SimpleEntity_Type.featOkTst && ((SimpleEntity_Type)jcasType).casFeat_Text == null)
+      jcasType.jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.SimpleEntity");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((SimpleEntity_Type)jcasType).casFeatCode_Text);}
     
   /** setter for Text - sets  
    * @generated
    * @param v value to set into the feature 
    */
   public void setText(String v) {
-    if (WatsonAnnotation_Type.featOkTst && ((WatsonAnnotation_Type)jcasType).casFeat_Text == null)
-      jcasType.jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.WatsonAnnotation");
-    jcasType.ll_cas.ll_setStringValue(addr, ((WatsonAnnotation_Type)jcasType).casFeatCode_Text, v);}    
+    if (SimpleEntity_Type.featOkTst && ((SimpleEntity_Type)jcasType).casFeat_Text == null)
+      jcasType.jcas.throwFeatMissing("Text", "org.apache.uima.watson.ts.SimpleEntity");
+    jcasType.ll_cas.ll_setStringValue(addr, ((SimpleEntity_Type)jcasType).casFeatCode_Text, v);}    
+   
+    
+  //*--------------*
+  //* Feature: EntityType
+
+  /** getter for EntityType - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getEntityType() {
+    if (SimpleEntity_Type.featOkTst && ((SimpleEntity_Type)jcasType).casFeat_EntityType == null)
+      jcasType.jcas.throwFeatMissing("EntityType", "org.apache.uima.watson.ts.SimpleEntity");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((SimpleEntity_Type)jcasType).casFeatCode_EntityType);}
+    
+  /** setter for EntityType - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setEntityType(String v) {
+    if (SimpleEntity_Type.featOkTst && ((SimpleEntity_Type)jcasType).casFeat_EntityType == null)
+      jcasType.jcas.throwFeatMissing("EntityType", "org.apache.uima.watson.ts.SimpleEntity");
+    jcasType.ll_cas.ll_setStringValue(addr, ((SimpleEntity_Type)jcasType).casFeatCode_EntityType, v);}    
   }
 
     

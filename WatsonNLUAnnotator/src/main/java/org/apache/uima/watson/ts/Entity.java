@@ -1,16 +1,17 @@
 
 
-/* First created by JCasGen Wed Jun 07 14:04:49 MSK 2017 */
+/* First created by JCasGen Mon Jun 12 14:00:10 MSK 2017 */
 package org.apache.uima.watson.ts;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
+import org.apache.uima.jcas.cas.StringArray;
 
 
 /** Named entity
- * Updated by JCasGen Sun Jun 11 14:23:25 MSK 2017
+ * Updated by JCasGen Mon Jun 12 14:43:19 MSK 2017
  * XML source: /home/windj/projects/uima-addons/WatsonNLUAnnotator/src/main/resources/desc/type/Watson.xml
  * @generated */
 public class Entity extends WatsonAnnotation {
@@ -139,6 +140,116 @@ public class Entity extends WatsonAnnotation {
     if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Count == null)
       jcasType.jcas.throwFeatMissing("Count", "org.apache.uima.watson.ts.Entity");
     jcasType.ll_cas.ll_setIntValue(addr, ((Entity_Type)jcasType).casFeatCode_Count, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Emotion
+
+  /** getter for Emotion - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public Emotion getEmotion() {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Emotion == null)
+      jcasType.jcas.throwFeatMissing("Emotion", "org.apache.uima.watson.ts.Entity");
+    return (Emotion)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Emotion)));}
+    
+  /** setter for Emotion - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setEmotion(Emotion v) {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Emotion == null)
+      jcasType.jcas.throwFeatMissing("Emotion", "org.apache.uima.watson.ts.Entity");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Emotion, jcasType.ll_cas.ll_getFSRef(v));}    
+   
+    
+  //*--------------*
+  //* Feature: DbpediaResource
+
+  /** getter for DbpediaResource - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getDbpediaResource() {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_DbpediaResource == null)
+      jcasType.jcas.throwFeatMissing("DbpediaResource", "org.apache.uima.watson.ts.Entity");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Entity_Type)jcasType).casFeatCode_DbpediaResource);}
+    
+  /** setter for DbpediaResource - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setDbpediaResource(String v) {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_DbpediaResource == null)
+      jcasType.jcas.throwFeatMissing("DbpediaResource", "org.apache.uima.watson.ts.Entity");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Entity_Type)jcasType).casFeatCode_DbpediaResource, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Subtype
+
+  /** getter for Subtype - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public StringArray getSubtype() {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Subtype == null)
+      jcasType.jcas.throwFeatMissing("Subtype", "org.apache.uima.watson.ts.Entity");
+    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype)));}
+    
+  /** setter for Subtype - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setSubtype(StringArray v) {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Subtype == null)
+      jcasType.jcas.throwFeatMissing("Subtype", "org.apache.uima.watson.ts.Entity");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for Subtype - gets an indexed value - 
+   * @generated
+   * @param i index in the array to get
+   * @return value of the element at index i 
+   */
+  public String getSubtype(int i) {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Subtype == null)
+      jcasType.jcas.throwFeatMissing("Subtype", "org.apache.uima.watson.ts.Entity");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype), i);
+    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype), i);}
+
+  /** indexed setter for Subtype - sets an indexed value - 
+   * @generated
+   * @param i index in the array to set
+   * @param v value to set into the array 
+   */
+  public void setSubtype(int i, String v) { 
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Subtype == null)
+      jcasType.jcas.throwFeatMissing("Subtype", "org.apache.uima.watson.ts.Entity");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype), i);
+    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Entity_Type)jcasType).casFeatCode_Subtype), i, v);}
+   
+    
+  //*--------------*
+  //* Feature: Name
+
+  /** getter for Name - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getName() {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Name == null)
+      jcasType.jcas.throwFeatMissing("Name", "org.apache.uima.watson.ts.Entity");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Entity_Type)jcasType).casFeatCode_Name);}
+    
+  /** setter for Name - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setName(String v) {
+    if (Entity_Type.featOkTst && ((Entity_Type)jcasType).casFeat_Name == null)
+      jcasType.jcas.throwFeatMissing("Name", "org.apache.uima.watson.ts.Entity");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Entity_Type)jcasType).casFeatCode_Name, v);}    
   }
 
     

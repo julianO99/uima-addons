@@ -2,9 +2,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
     <primitive>true</primitive>
-    <annotatorImplementationName>org.apache.uima.watson.annotators.WatsonEntitiesAnnotator</annotatorImplementationName>
+    <annotatorImplementationName>org.apache.uima.watson.annotators.WatsonSemanticRolesAnnotator</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>org.apache.uima.watson.annotators.WatsonEntitiesAnnotator</name>
+        <name>org.apache.uima.watson.annotators.WatsonSemanticRolesAnnotator</name>
         <version>2.3.2-SNAPSHOT</version>
         <vendor>The Apache Software Foundation</vendor>
         <configurationParameters>
@@ -16,21 +16,14 @@
                 <mandatory>false</mandatory>
             </configurationParameter>
             <configurationParameter>
-                <name>model</name>
-                <description/>
-                <type>String</type>
-                <multiValued>false</multiValued>
-                <mandatory>false</mandatory>
-            </configurationParameter>
-            <configurationParameter>
-                <name>sentiment</name>
+                <name>keywords</name>
                 <description/>
                 <type>Boolean</type>
                 <multiValued>false</multiValued>
                 <mandatory>false</mandatory>
             </configurationParameter>
             <configurationParameter>
-                <name>emotion</name>
+                <name>entities</name>
                 <description/>
                 <type>Boolean</type>
                 <multiValued>false</multiValued>
@@ -53,13 +46,13 @@
         </configurationParameters>
         <configurationParameterSettings>
             <nameValuePair>
-                <name>sentiment</name>
+                <name>keywords</name>
                 <value>
                     <boolean>true</boolean>
                 </value>
             </nameValuePair>
             <nameValuePair>
-                <name>emotion</name>
+                <name>entities</name>
                 <value>
                     <boolean>true</boolean>
                 </value>
@@ -76,7 +69,10 @@
             <capability>
                 <inputs/>
                 <outputs>
-                    <type>org.apache.uima.watson.ts.Entity</type>
+                    <type>org.apache.uima.watson.ts.SemanticFrame</type>
+                    <type>org.apache.uima.watson.ts.SemanticSubject</type>
+                    <type>org.apache.uima.watson.ts.SemanticAction</type>
+                    <type>org.apache.uima.watson.ts.SemanticObject</type>
                 </outputs>
                 <languagesSupported/>
             </capability>
