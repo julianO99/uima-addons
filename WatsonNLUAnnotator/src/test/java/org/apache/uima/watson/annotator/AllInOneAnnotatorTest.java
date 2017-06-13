@@ -25,20 +25,27 @@ import java.util.Map;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.FileUtils;
+import org.apache.uima.watson.ts.Category;
+import org.apache.uima.watson.ts.Concept;
+import org.apache.uima.watson.ts.Entity;
+import org.apache.uima.watson.ts.Keyword;
 import org.apache.uima.watson.ts.Metadata;
+import org.apache.uima.watson.ts.Relation;
+import org.apache.uima.watson.ts.SemanticFrame;
+import org.apache.uima.watson.ts.Sentiment;
 import org.apache.uima.watson.utils.TestUtils;
 import org.junit.Ignore;
 
 import junit.framework.TestCase;
 
-public class MetadataAnnotatorTest extends TestCase {
+public class AllInOneAnnotatorTest extends TestCase {
 	// private static final String DOC = "Eight US soldiers die in attacks in
 	// south Afghanistan, making October the deadliest month for the US in the
 	// war there";
 
 	private static final String DOCPATH = "src/test/resources/rankedTestText.txt";
 
-	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonMetadataAnnotator.xml";
+	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonAllInOneAnnotator.xml";
 
 	private static final String YOUR_USERNAME_HERE = "username";
 	private static final String YOUR_PASSWORD_HERE = "password";
@@ -50,12 +57,39 @@ public class MetadataAnnotatorTest extends TestCase {
 		parameterSettings.put("username", YOUR_USERNAME_HERE);
 		parameterSettings.put("password", YOUR_PASSWORD_HERE);
 		String documentText = FileUtils.file2String(new File(DOCPATH));
+
 		JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(XML_PATH, parameterSettings), documentText);
+		
+		List<Category> categories = (List<Category>) TestUtils.getAllFSofType(Category.type, resultingCAS);
+		assertTrue(categories != null);
+		assertTrue(categories.size() == 3);
+
+		List<Concept> concepts = (List<Concept>) TestUtils.getAllFSofType(Concept.type, resultingCAS);
+		assertTrue(concepts != null);
+		assertTrue(concepts.size() == 8);
+
+		List<Entity> entities = (List<Entity>) TestUtils.getAllFSofType(Entity.type, resultingCAS);
+		assertTrue(entities != null);
+		assertTrue(entities.size() == 30);
+
+		List<Keyword> keywords = (List<Keyword>) TestUtils.getAllFSofType(Keyword.type, resultingCAS);
+		assertTrue(keywords != null);
+		assertTrue(keywords.size() == 40);
+		
 		List<Metadata> meta = (List<Metadata>) TestUtils.getAllFSofType(Metadata.type, resultingCAS);
-		for (Metadata m : meta) {
-			System.out.println(m.toString());
-		}
 		assertTrue(meta != null);
-		assertTrue(meta.size() == 1);
+		assertTrue(meta.size() == 0);
+		
+		List<Relation> relations = (List<Relation>) TestUtils.getAllFSofType(Relation.type, resultingCAS);
+		assertTrue(relations!= null);
+		assertTrue(relations.size() == 7);
+
+		List<SemanticFrame> frames = (List<SemanticFrame>) TestUtils.getAllFSofType(SemanticFrame.type, resultingCAS);
+		assertTrue(frames!= null);
+		assertTrue(frames.size() == 27);
+
+		List<Sentiment> sentiments = (List<Sentiment>) TestUtils.getAllFSofType(Sentiment.type, resultingCAS);
+		assertTrue(sentiments != null);
+		assertTrue(sentiments.size() == 0);
 	}
 }

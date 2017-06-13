@@ -13,21 +13,20 @@ import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.Me
 
 public class MetadataParser extends AbstractResultParser {
 	public void parseResults(AnalysisResults results, JCas cas) throws WatsonException {
-		if (results.getMetadata() == null)
-			throw new NoResultException();
+		if (results.getMetadata() != null) {
+			MetadataResult res = results.getMetadata();
+			Metadata meta = new Metadata(cas);
 
-		MetadataResult res = results.getMetadata();
-		Metadata meta = new Metadata(cas);
+			List<Author> src_authors = res.getAuthors();
+			StringArray authors = new StringArray(cas, src_authors.size());
+			for (int i = 0; i < src_authors.size(); i++)
+				authors.set(i, src_authors.get(i).getName());
+			authors.addToIndexes();
+			meta.setAuthors(authors);
 
-		List<Author> src_authors = res.getAuthors();
-		StringArray authors = new StringArray(cas, src_authors.size());
-		for (int i = 0; i < src_authors.size(); i++)
-			authors.set(i, src_authors.get(i).getName());
-		authors.addToIndexes();
-		meta.setAuthors(authors);
-
-		meta.setPublicationDate(res.getPublicationDate());
-		meta.setTitle(res.getTitle());
-		meta.addToIndexes();
+			meta.setPublicationDate(res.getPublicationDate());
+			meta.setTitle(res.getTitle());
+			meta.addToIndexes();
+		}
 	}
 }

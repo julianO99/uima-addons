@@ -40,8 +40,8 @@ public class RelationsAnnotatorTest extends TestCase {
 
 	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonRelationsAnnotator.xml";
 
-	private static final String YOUR_USERNAME_HERE = "a8c2db86-787e-42e4-a8e4-38a1dd5850c8";
-	private static final String YOUR_PASSWORD_HERE = "8in0IAw7B7oq";
+	private static final String YOUR_USERNAME_HERE = "username";
+	private static final String YOUR_PASSWORD_HERE = "password";
 
 	@SuppressWarnings("unchecked")
 	@Ignore

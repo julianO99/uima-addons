@@ -40,8 +40,8 @@ public class EntitiesExtractionAnnotatorTest extends TestCase {
 
 	private static final String XML_PATH = "src/main/resources/org/apache/uima/watson/annotators/WatsonEntitiesAnnotator.xml";
 
-	private static final String YOUR_USERNAME_HERE = "your-username";
-	private static final String YOUR_PASSWORD_HERE = "your-passord";
+	private static final String YOUR_USERNAME_HERE = "username";
+	private static final String YOUR_PASSWORD_HERE = "password";
 
 	@SuppressWarnings("unchecked")
 	@Ignore
@@ -56,6 +56,6 @@ public class EntitiesExtractionAnnotatorTest extends TestCase {
 			System.out.println(ent.toString());
 		}
 		assertTrue(entities != null);
-		assertTrue(entities.size() == 1);
+		assertTrue(entities.size() == 30);
 	}
 }

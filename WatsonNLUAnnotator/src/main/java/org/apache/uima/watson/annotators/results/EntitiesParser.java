@@ -23,15 +23,17 @@ public class EntitiesParser extends AbstractResultParser {
 			entity.setCount(res.getCount());
 
 			DisambiguationResult disamb = res.getDisambiguation();
-			entity.setDbpediaResource(disamb.getDbpediaResource());
+			if (disamb != null) {
+				entity.setDbpediaResource(disamb.getDbpediaResource());
 
-			List<String> src_subtypes = disamb.getSubtype();
-			StringArray subtypes = new StringArray(cas, src_subtypes.size());
-			for (int i = 0; i < src_subtypes.size(); i++)
-				subtypes.set(i, src_subtypes.get(i));
-			subtypes.addToIndexes();
-			entity.setSubtype(subtypes);
-			entity.setName(disamb.getName());
+				List<String> src_subtypes = disamb.getSubtype();
+				StringArray subtypes = new StringArray(cas, src_subtypes.size());
+				for (int i = 0; i < src_subtypes.size(); i++)
+					subtypes.set(i, src_subtypes.get(i));
+				subtypes.addToIndexes();
+				entity.setSubtype(subtypes);
+				entity.setName(disamb.getName());
+			}
 
 			if (res.getEmotion() != null)
 				entity.setEmotion(createEmotion(cas, res.getEmotion()));
